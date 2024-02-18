@@ -1,4 +1,4 @@
-<h1 align ="center" > 🚪🛏️ RENTING SYSTEM MEAN APLICATION </h1>
+<h1 align ="center" > 🏡 RENTING SYSTEM MEAN APLICATION </h1>
 <h4  align ="center"> 
 Fullstack open source application, dynamic E RENTING rooms, houses, System website(MEAN STACK)</h4>
  <h4  align ="center"> Made with Angular(14) MongoDB, Express, Nodejs  </h4>
@@ -42,7 +42,7 @@ In the second terminal
 # --- Terminal ---
 
 $ npm install (to install server-side dependencies)
-$ npm start (to start the server), or nodemon server
+$ npm start (to start the server), or nodemon index
 
 ```
 ![Status project](https://img.shields.io/badge/STATUS-Finished-GREEN?style=for-the-badge)
@@ -62,22 +62,19 @@ $ npm start (to start the server), or nodemon server
 ##  Screenshots:
 📸
 <br>
-<img src="./PROJECTIMAGES/IMAGE01.jpg" alt="project screenshot01" />
-<img src="./PROJECTIMAGES/IMAGE02.jpg" alt="project screenshot02" />
-<img src="./PROJECTIMAGES/IMAGE03.jpg" alt="project screenshot03" />
-<img src="./PROJECTIMAGES/IMAGE04.jpg" alt="project screenshot04" />
-<img src="./PROJECTIMAGES/IMAGE05.jpg" alt="project screenshot05" />
-<img src="./PROJECTIMAGES/IMAGE06.jpg" alt="project screenshot06" />
-<img src="./PROJECTIMAGES/IMAGE07.jpg" alt="project screenshot07" />
+<img src="./projectsimages/image01.jpg" alt="project screenshot01" />
+<img src="./projectsimages/image02.jpg" alt="project screenshot02" />
+<img src="./projectsimages/image03.jpg" alt="project screenshot03" />
+<img src="./projectsimages/image04.jpg" alt="project screenshot04" />
 <br>
 
 ##  Key Features:
 
-- Admin Area
-- Add/Edit/Delete Products, Users and Staff.
+- LandLord Area
+- User Area
+- Add/Edit/Delete Rooms.
 - User Authenication
-- Admin  Authenication
-- See Product List
+- See Rooms List
 
 
 ##  Technologies used
