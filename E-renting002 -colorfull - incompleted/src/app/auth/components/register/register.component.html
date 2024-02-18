@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+   <!--Made with love by Mutiullah Samim -->
+
+
+
+    <!--Fontawesome CDN-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--- bootstrap 4.1.1 -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+</head>
+
+<body>
+    <div class="container-fluid containerP">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card border border-light">
+                <div class="card-header">
+                    <h3>Sign Up</h3>
+                    <div class="d-flex justify-content-end social_icon">
+
+                        <span><i class="fa-brands fa-facebook-f fa-md"></i></span>
+                        <span><i class="fa-brands fa-google fa-md"></i></span>
+                        <span><i class="fa-brands fa-twitter fa-md"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form>
+
+                      <!-- first form field firstName -->
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa-solid fa-user fa-xl"></i></span>
+                            </div>
+
+                            <input type="text" class="form-control input-field" appearance="outline" placeholder="First name"  name="fname" pattern="[A-Z][a-z]{1,10}" [(ngModel)]="UserModel.firstName" required>
+
+                        </div>
+                       <!-- Second form field LastName -->
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa-solid fa-user fa-xl"></i></span>
+                          </div>
+
+                          <input type="text" class="form-control input-field" appearance="outline" placeholder="Last name" name="lname"    pattern="[A-Z][a-z]{1,10}" [(ngModel)]="UserModel.lastName" required>
+
+                      </div>
+                      <!-- Third form field User-email -->
+                      <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa-solid fa-envelopes-bulk fa-xl"></i></span>
+                        </div>
+
+                        <input type="text" class="form-control input-field" appearance="outline" placeholder="Enter email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="email" name="email" [(ngModel)]="UserModel.email" required>
+
+                    </div>
+                      <!-- Fourth form field Contact -->
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa-solid fa-mobile fa-xl"></i></span>
+                            </div>
+                            <input  class="form-control" placeholder="Enter phone number" type="tel"  pattern="[0-9]{10}"   name="contact" [(ngModel)]="UserModel.contact">
+                        </div>
+
+                         <!-- Fiveth form field address -->
+                         <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa-solid fa-address-card fa-xl"></i></span>
+                          </div>
+                          <input type="text" class="form-control" placeholder="Address"  required name="address" [(ngModel)]="UserModel.address">
+                      </div>
+                      <!-- Sixth form field get user image  -->
+                       <!-- <label class="file">Choose Profile Picture</label> -->
+                       <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+
+                              <i class="fa-solid fa-user-tag fa-xl"></i>
+
+                            </span>
+                        </div>
+                        <input type="file"  class="form-control" name="myfile" accept="image/*" (change)="changeProfileImg($event)" multiple required/>
+
+                        <span class="file-custom"></span>
+
+                    </div>
+                     <!-- Seventh form field password -->
+                     <div class="input-group form-group">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-sharp fa-solid fa-key fa-lg"></i></span>
+                      </div>
+                      <input  placeholder="Enter password" class="form-control" type="password" name="password" [(ngModel)]="UserModel.password">
+                  </div>
+                   <!-- Eighth form field User role -->
+                   <div class="input-group form-group">
+
+
+                    <input  type="radio" id="radio-design" name="role" value="landlord" [(ngModel)]="UserModel.role">
+                    <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; Tenant</label>&nbsp; &nbsp; &nbsp; &nbsp;
+
+                    <input  type="radio" id="radio-design" name="role" [(ngModel)]="UserModel.role" value="Tenant">
+                    <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; Landlord</label><br>
+
+                </div>
+
+
+
+                            <button id="reg-btn" class="btn btn float-right btn-primary" (click)="register()">Sign Up</button>
+
+                    </form>
+
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                         Have an account?<a href="login">Login</a>
+                    </div>
+                   
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+    </body>
+
+    </html>
+

@@ -1,0 +1,90 @@
+
+<head>
+
+	<title>Login Page</title>
+
+
+
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+    <!--- bootstrap 4.1.1 -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+
+
+  <!---- new login begining block -->
+
+  <body>
+    <div class="container-fluid containerP">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card border border-light">
+                <div class="card-header">
+                    <h3>Login</h3>
+                    <div class="d-flex justify-content-end social_icon">
+
+                        <span><i class="fa-brands fa-facebook-f fa-md"></i></span>
+                        <span><i class="fa-brands fa-google fa-md"></i></span>
+                        <span><i class="fa-brands fa-twitter fa-md"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form>
+
+                      <!-- first form field firstName -->
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa-solid fa-user fa-xl"></i></span>
+                            </div>
+
+                            <input type="text" placeholder="Enter email address"
+              name="email" class="form-control input-field" appearance="outline"
+              [(ngModel)]="authModel.email"
+              [ngModelOptions]="{ standalone: true }">
+
+                        </div>
+
+                       <!-- Second form field LastName -->
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                          </div>
+
+                          <input type="password" type="Password"
+              placeholder="Password" class="form-control input-field" appearance="outline"
+              name="password"
+              [(ngModel)]="authModel.password"
+              [ngModelOptions]="{ standalone: true }">
+
+                      </div>
+
+
+
+
+                            <button id="reg-btn" class="btn btn float-right btn-primary" (click)="login()">Login</button>
+
+                    </form>
+
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Don't have an account?<a href="register">Sign Up</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </div>
+
+              </div>
+
+            </div>
+        </div>
+    </div>
+    </body>
+
+
+  <!---- new login end block ------->

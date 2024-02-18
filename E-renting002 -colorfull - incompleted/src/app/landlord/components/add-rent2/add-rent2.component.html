@@ -1,0 +1,242 @@
+
+
+
+  <head>
+    <title>Add New Room Page</title>
+     <!--Made with love by Mutiullah Samim -->
+
+
+
+      <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+  <!------ Include the above in your HEAD tag ---------->
+
+
+
+</head>
+
+
+
+
+
+           <body class="container-fluid ml-0">
+            <div class="container container-fluid ml-0">
+              <div class="card-container d-flex">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>Add New Room</h3>
+                    <div class="d-flex justify-content-end social_icon">
+                      <span><i class="fab fa-facebook-square"></i></span>
+                      <span><i class="fab fa-google-plus-square"></i></span>
+                      <span><i class="fab fa-twitter-square"></i></span>
+                    </div>
+                  </div>
+
+                  <div class="card-body">
+                    <form [formGroup]="reactiveForm" novalidate>
+
+ <!--------------- Street Name, begining block ---------------------------------------------->
+    <div class="input-group form-group posi">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="bi bi-distribute-vertical"></i></span>
+
+        </div>
+
+      <input type="text" class="form-control"  placeholder="Street Name" name="street" formControlName="street"
+      minlength="5" [class.is-invalid]="street.invalid && (street.dirty || street.touched)"  required>
+      <div *ngIf="street.invalid && (street.dirty || street.touched)" class="invalid-feedback">
+        <div *ngIf="street.errors?.['required']">This field is required.</div>
+        <div *ngIf="street.errors?.['minlength']">This field must have at least 5 character.</div>
+      </div>
+    </div>
+<!-------------- Street Name, end block ---------------------------------------------------------->
+
+<!--------------- city , begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+    <span class="input-group-text"><i class="bi bi-geo-fill"></i></span>
+
+  </div>
+
+  <!-- First way to do it -->
+<input type="text" class="form-control"  placeholder="City" name="city" formControlName="city"
+ [class.is-invalid]="city.invalid && (city.dirty || city.touched)"  required>
+
+ <!-- Second Way to do it -->
+ <!--
+ <input  type="radio" id="radio-design" name="city" formControlName="city">
+ <label for="radio-design"  style="color: antiquewhite;" value = "Naguanagua">&nbsp; &nbsp; &nbsp; &nbsp;Naguanagua</label>&nbsp; &nbsp; &nbsp; &nbsp;
+
+ <input  type="radio" id="radio-design" name="city" formControlName="city" value="Valencia">
+ <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; Valencia</label><br> -->
+
+ <!--<label for="cars" style="color: blanchedalmond;"> City: &nbsp; &nbsp; &nbsp; </label>-->
+
+<!--- third way -->
+ <!--<div class="input-group-prepend">
+  <span class="input-group-text"><i class="bi bi-geo-fill"></i></span>
+</div>
+ <select id="cars" name="city" formControlName="city" class="rounded-end form-control" required>
+   <option value="Naguanagua" selected>Naguanagua</option>
+   <option value="Valencia">Valencia</option>
+   <option value="San Diego">San Diego</option>
+
+ </select> -->
+
+
+
+
+<div *ngIf="city.invalid && (city.dirty || city.touched)" class="invalid-feedback">
+  <div *ngIf="city.errors?.['required']">This field is required.</div>
+</div>
+</div>
+<!-------------- city, end block ---------------------------------------------------------->
+
+<!--------------- State, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="bi bi-geo-fill"></i></span>
+
+  </div>
+
+<input type="text" class="form-control"  placeholder="State" name="state" formControlName="state"
+ [class.is-invalid]="state.invalid && (state.dirty || state.touched)"  required>
+<div *ngIf="state.invalid && (state.dirty || state.touched)" class="invalid-feedback">
+  <div *ngIf="state.errors?.['required']">This field is required.</div>
+
+</div>
+</div>
+<!-------------- State Name, end block ---------------------------------------------------------->
+<!--------------- Room No, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="bi bi-file-earmark-diff"></i></span>
+
+  </div>
+
+<input type="number" class="form-control"  placeholder="Room No" name="roomNo" formControlName="roomNo"
+ [class.is-invalid]="roomNo.invalid && (roomNo.dirty || roomNo.touched)"   min="1" max="5" required>
+<div *ngIf="roomNo.invalid && (roomNo.dirty || roomNo.touched)" class="invalid-feedback">
+  <div *ngIf="roomNo.errors?.['required']">This field is required.</div>
+
+</div>
+</div>
+<!-------------- Room No, end block ---------------------------------------------------------->
+<!--------------- Distrito, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="bi bi-geo-fill"></i></span>
+
+  </div>
+
+<input type="text" class="form-control"  placeholder="District" name="district" formControlName="district"
+ [class.is-invalid]="district.invalid && (district.dirty || district.touched)"  required>
+<div *ngIf="district.invalid && (district.dirty || district.touched)" class="invalid-feedback">
+  <div *ngIf="district.errors?.['required']">This field is required.</div>
+
+</div>
+</div>
+<!-------------- distrito, end block ---------------------------------------------------------->
+
+<!--------------- Landmark, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="bi bi-rulers"></i></span>
+
+  </div>
+
+<input type="text" class="form-control"  placeholder="Landmark" name="landmark" formControlName="landmark"
+ [class.is-invalid]="landmark.invalid && (landmark.dirty || landmark.touched)"  required>
+<div *ngIf="landmark.invalid && (landmark.dirty || landmark.touched)" class="invalid-feedback">
+  <div *ngIf="landmark.errors?.['required']">This field is required.</div>
+
+</div>
+</div>
+<!-------------- Landmark, end block ---------------------------------------------------------->
+<!--------------- Room Type, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="bi bi-columns"></i></span>
+
+  </div>
+
+<input type="text" class="form-control"  placeholder="roomType" name="roomTypes" formControlName="roomTypes"
+ [class.is-invalid]="roomTypes.invalid && (roomTypes.dirty || roomTypes.touched)"  required>
+<div *ngIf="roomTypes.invalid && (roomTypes.dirty || roomTypes.touched)" class="invalid-feedback">
+  <div *ngIf="roomTypes.errors?.['required']">This field is required.</div>
+
+</div>
+</div>
+
+<!-------------- Room Type, end block ---------------------------------------------------------->
+
+<!-- form field get documents image  -->
+                       <!-- <label class="file">Choose Profile Picture</label> -->
+
+                       <h6 style="color: blanchedalmond;">Add Legal Documents:</h6>
+                       <div class="input-group form-group posi">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                 <i class="bi bi-newspaper"></i>
+                           </span>
+                        </div>
+                        <input type="file"  class="form-control rounded-end" name="myfile"
+                        formControlName="legalDocuments"
+                        accept="image/*" (change)="changelegaldoc($event)" multiple required />
+
+
+
+                        <span class="file-custom"></span>
+
+                    </div>
+
+                   <!--  form field add profile picture -->
+                   <h6 style="color: blanchedalmond;">Add Profile Picture:</h6>
+                   <div class="input-group form-group posi">
+
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+
+                          <i class="bi bi-images"></i>
+
+
+                        </span>
+                    </div>
+                    <input type="file"  class="form-control rounded-end" name="myfile" accept="image/*"  formControlName="image" (change)="changeImg($event)" multiple/>
+
+                    <span class="file-custom"></span>
+
+                </div>
+
+
+
+
+<br>
+
+
+
+                      <br>
+                      <button id="reg-btn" class="btn btn float-right btn-primary ml-5" (click)="Addroom()"> Add Room
+                      </button> &nbsp; &nbsp; &nbsp;
+                      <button id="reg-btn" class="btn btn float-left btn-warning mr-5" (click)="back()"> Back </button>
+
+                    </form>
+                  </div>
+
+
+
+
+
+
+                  <div class="card-footer">
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            </body>

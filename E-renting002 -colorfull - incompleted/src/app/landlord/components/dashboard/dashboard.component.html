@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<div class="card-group justify-content-center mt-5">
+
+ <!---- first card block ------------------------------------------->
+  <div class="card border border-dark m-3">
+    <div class="row g-0 justify-content-center">
+       <div class="col-ms-3 text-center">
+    <img src= "./assets/hab001.jpg"
+    class="img-fluid rounded-start"
+    alt="..."  style="height: 7.5em;">
+    <div class="card-body">
+      <h5 class="card-title">Total Rooms</h5>
+      <h2 class="card-text">{{totalRooms}}</h2>
+          <p class="card-text">
+            <small class="text-muted"> Last updated now</small>
+         </p>
+    </div>
+     </div>
+  </div>
+</div>
+
+<!---- End first card block ------------------------------------------->
+<!---- Second card block ----------------------------------------------->
+
+<div class="card border border-dark m-3">
+  <div class="row g-0 justify-content-center">
+     <div class="col-ms-3 text-center">
+  <img src= "./assets/hab002.jpg"
+  class="img-fluid rounded-start"
+  alt="..."  style="height: 7.5em;">
+  <div class="card-body">
+    <h5 class="card-title">Approved</h5>
+    <h2 class="card-text">{{approvedRooms}}</h2>
+        <p class="card-text">
+          <small class="text-muted"> Last updated now</small>
+       </p>
+  </div>
+   </div>
+</div>
+</div>
+  <!---- End SEcond card block ------------------------------------------->
+
+  <!---- Third card block ----------------------------------------------->
+
+  <div class="card border border-dark m-3">
+    <div class="row g-0 justify-content-center">
+       <div class="col-ms-3 text-center">
+    <img src= "./assets/hab003.jpg"
+    class="img-fluid rounded-start"
+    alt="..."  style="height: 7.5em;">
+    <div class="card-body">
+      <h5 class="card-title">Pending</h5>
+      <h2 class="card-text">{{pendingRooms}}</h2>
+          <p class="card-text">
+            <small class="text-muted"> Last updated now</small>
+         </p>
+    </div>
+     </div>
+  </div>
+</div>
+
+  <!---- End Third card block ------------------------------------------->
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<app-allotmentdetails></app-allotmentdetails>

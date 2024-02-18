@@ -1,0 +1,62 @@
+
+
+    <head>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+    </head>
+
+    <body>
+      <br>
+      <button id="add_btn" class="btn btn-large btn-secondary ml-5" *ngIf="param=='landlord'" (click)="add_room()"> Add Room </button>
+
+
+
+
+              <table class="table table-bordered table-secondary table-hover text-center table-responsive-sm mt-5">
+                  <thead class="table-dark border-light">
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Id</th>
+                          <th scope="col">Street Name</th>
+                          <th scope="col">City</th>
+                          <th scope="col">District</th>
+                          <th scope="col">State</th>
+
+                          <th scope="col">Room Type</th>
+                          <th scope="col">Edit/delete</th>
+                          <th scope="col"></th>
+
+                      </tr>
+                  </thead>
+                  <tbody class="border-dark">
+                      <tr *ngFor="let element of dataSource;let row = index;" >
+
+                          <td>{{row+1}}</td>
+                          <td>{{element?._id}}</td>
+                         <!-- <td>{{element._id}}</td> -->
+                          <td>{{element?.street ? element?.street :'not set'}}</td>
+                          <td>{{element?.city ? element?.city :'not set'}}</td>
+                          <td>{{element?.district ? element?.district :'not set'}}</td>
+                          <td>{{element?.state ? element?.state :'not set'}}</td>
+
+                          <td>{{element?.roomTypes ? element?.roomTypes :'not set'}}</td>
+
+
+                         <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square" (click)= "editDetails(element._id)" ></i></button>
+                            <button class="btn btn-sm btn-danger" ><span (click)="deleteDetails(element, row)"><i class="bi bi-trash3-fill" ></i></span></button></td>
+
+                          <!--<td><span class="edit" [routerLink]="['/editrent2', element._id]">
+                            <button type="button" class="btn btn-success btn-sm">Edit</button>
+                          </span></td>-->
+                          <!--<td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square" [routerLink]="['/editrent2', element._id]" ></i></button></td> -->
+
+
+                      </tr>
+
+
+                  </tbody>
+              </table>
+
+
+    </body>

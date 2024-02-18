@@ -1,0 +1,206 @@
+<head>
+  <title>Edit Room Page</title>
+   <!--Made with love by Sergio Moncada -->
+
+
+
+    <!--Fontawesome CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+
+
+</head>
+<body>
+<div class="container-fluid ml-0">
+  <div class="container container-fluid ml-0">
+    <div class="card-container d-flex">
+     <!-- form card register -->
+     <div class="card">
+
+      <div class="card-header">
+        <h3>Edit User</h3>
+        <div class="d-flex justify-content-end social_icon">
+          <span><i class="fab fa-facebook-square"></i></span>
+          <span><i class="fab fa-google-plus-square"></i></span>
+          <span><i class="fab fa-twitter-square"></i></span>
+        </div>
+       </div>
+
+
+       <div class="card-body border border-dark position">
+
+
+          <form [formGroup]="editForm" (ngSubmit)=" EditUser()">
+
+ <!--------------- firstName Name, begining block ---------------------------------------------->
+
+
+ <div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-file-person"></i></h4>&nbsp; FirstName:</span>
+
+  </div>
+
+<input style="color: black;"  type="text" class="form-control rounded-end"   name="firstName" formControlName="firstName" placeholder="firstName Name">
+
+<div  [class.is-invalid]="myForm['firstName'].invalid && (myForm['firstName'].dirty || myForm['firstName'].touched)"  required></div>
+<div *ngIf="myForm['firstName'].invalid && (myForm['firstName'].dirty || myForm['firstName'].touched)" class="invalid-feedback">
+  <div *ngIf="myForm['firstName'].errors?.['required']">This field is required.</div>
+  <div *ngIf="myForm['firstName'].errors?.['minlength']">This field must have at least 5 character.</div>
+</div>
+</div>
+<!-------------- firstName Name, end block ---------------------------------------------------------->
+<!--------------- lastName , begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-file-person"></i></h4>&nbsp; Last Name:</span>
+
+  </div>
+
+<input style="color: black;"  type="text" class="form-control rounded-end"   name="lastName" formControlName="lastName" placeholder="Last Name">
+
+<div  [class.is-invalid]="myForm['lastName'].invalid && (myForm['lastName'].dirty || myForm['lastName'].touched)"  required></div>
+<div *ngIf="myForm['lastName'].invalid && (myForm['lastName'].dirty || myForm['lastName'].touched)" class="invalid-feedback">
+  <div *ngIf="myForm['lastName'].errors?.['required']">This field is required.</div>
+  <div *ngIf="myForm['lastName'].errors?.['minlength']">This field must have at least 5 character.</div>
+</div>
+</div>
+
+
+
+
+  <!-------------- lastName, end block ---------------------------------------------------------->
+   <!--------------- email, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-envelope"></i></h4>&nbsp; Email:</span>
+
+  </div>
+
+  <input type="text" class="form-control"  placeholder="Email" name="email" formControlName="email"
+  [class.is-invalid]="myForm['email'].invalid && (myForm['email'].dirty || myForm['email'].touched)"  required>
+
+  <div *ngIf="myForm['email'].errors?.['required']">This field is required.</div>
+
+</div>
+
+  <!-------------- email Name, end block ---------------------------------------------------------->
+   <!--------------- password, begining block ---------------------------------------------->
+<div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-key-fill"></i></h4>&nbsp; Password:</span>
+
+  </div>
+
+  <input type="text" class="form-control"  placeholder="password" name="password" formControlName="password"
+  [class.is-invalid]="myForm['password'].invalid && (myForm['password'].dirty || myForm['password'].touched)"  required>
+
+  <div *ngIf="myForm['password'].errors?.['required']">This field is required.</div>
+
+</div>
+
+  <!-------------- password Name, end block ---------------------------------------------------------->
+ <!--------------- role, begining block ---------------------------------------------->
+ <div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-file-earmark-person-fill"></i></h4>&nbsp; Role:</span>
+
+  </div>
+
+  <input type="text" class="form-control"  placeholder="Role" name="role" formControlName="role"
+  [class.is-invalid]="myForm['role'].invalid && (myForm['role'].dirty || myForm['role'].touched)"  required>
+
+  <div *ngIf="myForm['role'].errors?.['required']">This field is required.</div>
+
+</div>
+
+  <!-------------- role Name, end block ---------------------------------------------------------->
+ <!--------------- contact, begining block ---------------------------------------------->
+ <div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="bi bi-people-fill"></i> &nbsp; &nbsp; Contact:</span>
+
+  </div>
+
+  <input type="text" class="form-control"  placeholder="contact" name="contact" formControlName="contact"
+  [class.is-invalid]="myForm['contact'].invalid && (myForm['contact'].dirty || myForm['contact'].touched)"  required>
+
+  <div *ngIf="myForm['contact'].errors?.['required']">This field is required.</div>
+
+</div>
+
+  <!-------------- contact Name, end block ---------------------------------------------------------->
+ <!--------------- totalRooms, begining block ---------------------------------------------->
+ <div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-file-earmark-ruled"></i></h4>&nbsp; Total Rooms:</span>
+
+  </div>
+
+  <input type="text" class="form-control"  placeholder="totalRooms" name="totalRooms" formControlName="totalRooms"
+  [class.is-invalid]="myForm['totalRooms'].invalid && (myForm['totalRooms'].dirty || myForm['totalRooms'].touched)"  required>
+
+  <div *ngIf="myForm['totalRooms'].errors?.['required']">This field is required.</div>
+
+</div>
+
+  <!-------------- totalRooms Name, end block ----------------------------------------------->
+ <!--------------- occupiedRooms, begining block ---------------------------------------------->
+ <div class="input-group form-group posi">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><h4><i class="bi bi-house-fill"></i></h4> &nbsp; Occup.Rooms:</span>
+
+  </div>
+
+  <input type="text" class="form-control"  placeholder="occupiedRooms" name="occupiedRooms" formControlName="occupiedRooms"
+  [class.is-invalid]="myForm['occupiedRooms'].invalid && (myForm['occupiedRooms'].dirty || myForm['occupiedRooms'].touched)"  required>
+
+  <div *ngIf="myForm['occupiedRooms'].errors?.['required']">This field is required.</div>
+
+</div>
+
+  <!-------------- occupiedRooms Name, end block ------------------------------------------>
+
+    <!--  form field add profile picture -->
+    <h6 style="color: blanchedalmond;">Add Profile Picture:</h6>
+    <div class="input-group form-group posi">
+
+     <div class="input-group-prepend">
+         <span class="input-group-text">
+
+          <h4> <i class="bi bi-images"></i> </h4>
+
+
+         </span>
+     </div>
+     <input type="file"  class="form-control rounded-end" name="myfile" accept="image/*"  formControlName="image" (change)="changeImg($event)" multiple/>
+
+     <span class="file-custom"></span>
+
+ </div>
+
+          <br>
+          <br>
+          <br>
+          <br>
+
+
+           <div class="form-group">
+             <button class="btn btn-success btn-lg btn-block" type="submit">
+               Update
+             </button> &nbsp; &nbsp; &nbsp;
+
+            <button id="reg-btn" class="btn btn-lg float-left btn-warning mr-5" (click)="back()"> Back </button>
+           </div>
+         </form>  <!-- form  -->
+       </div>
+     </div>
+
+   </div>
+ </div>
+</div>
+</body>

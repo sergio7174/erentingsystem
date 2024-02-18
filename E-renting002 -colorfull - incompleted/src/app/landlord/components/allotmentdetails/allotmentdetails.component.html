@@ -1,0 +1,43 @@
+<body>
+
+
+  <h2>DataSource: {{dataSource}}</h2>
+
+  <div class="d-flex justify-content-center align-items-center table-responsive-md">
+      <div class="col-md-12">
+          <table class="table table-bordered table-secondary table-hover text-center">
+              <thead class="table-dark border-light">
+                  <tr>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Room Nr</th>
+                      <th scope="col">Phone Nr</th>
+                      <th scope="col">Address</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
+                  </tr>
+              </thead>
+              <tbody class="border-dark">
+
+                  <tr *ngFor="let user of dataSource">
+
+
+                      <td>{{user.firstName}}</td>
+                      <td>{{user.lastName}}</td>
+                      <td>{{user.roomNo}}</td>
+                      <td>{{user.phoneNo}}</td>
+                      <td>{{user.address}}</td>
+                      <td>{{user.email}}</td>
+
+
+                      <td><button class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></button></td>
+                      <td><button class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></button></td>
+                  </tr>
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+</body>
+

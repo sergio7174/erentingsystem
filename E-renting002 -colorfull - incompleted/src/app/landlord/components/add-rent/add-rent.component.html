@@ -1,0 +1,201 @@
+
+<head>
+	<title>Add New Room</title>
+   <!--Made with love by Mutiullah Samim -->
+
+
+
+    <!--Fontawesome CDN-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--- bootstrap 4.1.1 -->
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+</head>
+
+<body>
+    <div class="container-fluid containerP">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card border border-light">
+                <div class="card-header">
+                    <h3>Add New Room</h3>
+                    <div class="d-flex justify-content-end social_icon">
+
+                        <span><i class="fa-brands fa-facebook-f fa-md"></i></span>
+                        <span><i class="fa-brands fa-google fa-md"></i></span>
+                        <span><i class="fa-brands fa-twitter fa-md"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form>
+
+                      <!-- first form field street Name -->
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa-solid fa-user fa-xl"></i></span>
+                            </div>
+
+                            <input type="text" class="form-control input-field" appearance="outline" placeholder="Street Name"  name="street" [(ngModel)]="AddModel.street" required>
+
+                        </div>
+
+                       <!-- Second form field City -->
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fa-solid fa-user fa-xl"></i></span>
+                          </div>
+
+                          <input type="text" class="form-control input-field" appearance="outline" placeholder="City" name="city"  [(ngModel)]="AddModel.city" required>
+
+                      </div>
+
+
+        <!-- Third form field state -->
+       <!--<div class="input-group form-group">
+          <h6 style="color: blanchedalmond;">Estado: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+
+          <input  type="radio" id="radio-design" name="state" [(ngModel)]="AddModel.state">
+          <label for="radio-design"  style="color: antiquewhite;" value = "carabobo">&nbsp; &nbsp; &nbsp; &nbsp; Carabobo</label>&nbsp; &nbsp; &nbsp; &nbsp;
+
+          <input  type="radio" id="radio-design" name="state" [(ngModel)]="AddModel.state" value="aragua">
+          <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; Aragua</label><br>
+         </div> -->
+
+
+
+
+
+      <div class=" form-group ">
+        <span for="state" style="color: bisque;">Choose an State:</span>
+        <div class="input-group-prepend select-style ">
+          <span class=" rounded-start"><i class="fa-solid fa-user fa-xl i-posi"></i></span>
+        </div>
+      <select class="input-style  rounded-end" id="state" name="state" [(ngModel)]="AddModel.state"
+       required>
+        <option value="Carabobo" selected >Carabobo</option>
+        <option value="Aragua">Aragua</option>
+
+      </select>
+       </div>
+
+
+
+
+
+                      <!-- Fourth form field RoomNo -->
+                      <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa-solid fa-address-card fa-xl"></i></span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Room No"  required name="roomNo" [(ngModel)]="AddModel.roomNo">
+
+                    </div>
+
+          <!-- Fiveth form field district -->
+          <div class="input-group form-group">
+            <h6 style="color: blanchedalmond;">Distrito: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+          <input  type="radio" id="radio-design" name="district" [(ngModel)]="AddModel.district">
+          <label for="radio-design"  style="color: antiquewhite;" value = "Valencia">&nbsp; &nbsp; &nbsp; &nbsp; Valencia</label>&nbsp; &nbsp; &nbsp; &nbsp;
+
+          <input  type="radio" id="radio-design" name="district" [(ngModel)]="AddModel.district" value="Maracay">
+          <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; Maracay</label><br>
+
+                   </div>
+
+    <!-- Sixth form field Landmark -->
+    <div class="input-group form-group">
+      <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fa-solid fa-address-card fa-xl"></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Landmark"  required name="landmark" [(ngModel)]="AddModel.landmark" required>
+
+  </div>
+
+ <!-- Seventh form field pinCode -->
+ <div class="input-group form-group">
+  <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fa-sharp fa-solid fa-key fa-lg"></i></span>
+  </div>
+  <input  placeholder="Pincode" class="form-control" type="number" name="pincode" pattern="[0-9]{6}" [(ngModel)]="AddModel.pincode" required >
+</div>
+
+
+
+                      <!-- Eighth form field get documents image  -->
+                       <!-- <label class="file">Choose Profile Picture</label> -->
+
+                       <h6 style="color: blanchedalmond;">Add Legal Documents:</h6>
+                       <div class="input-group form-group">
+
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+
+                              <i class="fa-solid fa-user-tag fa-xl"></i>
+
+
+                            </span>
+                        </div>
+                        <input type="file"  class="form-control" name="myfile" accept="image/*" (change)="changelegaldoc($event)" multiple required/>
+
+                        <span class="file-custom"></span>
+
+                    </div>
+
+                   <!-- nineth form field add profile picture -->
+                   <h6 style="color: blanchedalmond;">Add Profile Picture:</h6>
+                   <div class="input-group form-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+
+                          <i class="fa-solid fa-user-tag fa-xl"></i>
+
+
+                        </span>
+                    </div>
+                    <input type="file"  class="form-control" name="myfile" accept="image/*" (change)="changeImg($event)" multiple/>
+
+                    <span class="file-custom"></span>
+
+                </div>
+
+<!-- Tenth form field Room Type -->
+<h6 style="color: blanchedalmond;">Room Type:</h6>
+<div class="input-group form-group">
+  <input  type="radio" id="radio-design" name="room_types" [(ngModel)]="AddModel.roomTypes">
+  <label for="radio-design"  style="color: antiquewhite;" value = "1bhk">&nbsp; &nbsp; &nbsp; &nbsp; 1BHK</label>&nbsp; &nbsp; &nbsp; &nbsp;
+
+  <input  type="radio" id="radio-design" name="room_types" [(ngModel)]="AddModel.roomTypes" value="2bhk">
+  <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; 2BHK</label><br>
+
+  <input  type="radio" id="radio-design" name="room_types" [(ngModel)]="AddModel.roomTypes" value="3bhk">
+  <label for="radio-design"  style="color: antiquewhite;">&nbsp; &nbsp; &nbsp; &nbsp; 3BHK</label><br>
+           </div>
+<br>
+<br>
+
+
+<button id="reg-btn" class="btn btn float-right btn-primary ml-5" (click)="Addroom()"> Add Room
+</button>
+<button id="reg-btn" class="btn btn float-left btn-primary mr-5" (click)="back()"> Back </button>
+
+
+
+
+
+
+
+
+                    </form>
+
+
+
+
+
+
+              </div>
+
+            </div>
+        </div>
+    </div>
